@@ -196,8 +196,8 @@ const handleKey = function (key) {
 
   // End the game if exhausted
   if (currRow === 6) {
+    console.log("The answer is : " + answer);
     alert("YOU LOSE!");
-    console.log(answer);
   }
 };
 
