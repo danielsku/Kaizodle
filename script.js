@@ -146,12 +146,18 @@ const handleKey = function (key) {
       }
 
       // If secondPass is empty, that means all letters were correct
+      // BUT, player only wins if the the length of the guessed word
+      // is the same as the length of the answer word
       // --> Player wins!
-      if (secondPass.length === 0) {
+      if (secondPass.length === 0 && guess.length === answer.length) {
         setTimeout(function(){
           alert("You win");
         }, 100);
         return;
+      }
+
+      if(secondPass.length === 0 && guess.length !== answer.length) {
+          alert("You have not yet guessed the entire word!");
       }
 
       // Otherwise continue
